@@ -3,6 +3,7 @@
 <p><%= link_to "Add a Quote", new_article_path %></p>
 
 <% @allarticles.each do |article| %>
+  <br>
   <table>
     <tr>
       <td colspan="2">"<%= article.quote %>"</td>
