@@ -1,0 +1,10 @@
+<h1>Anonymous Quotes:</h1>
+<p><%= link_to "Add a Quote", new_article_path %></p>
+
+<table>
+  <% @allarticles.each do |article| %>
+  <tr>
+    <td><%= article.quote %></td>
+  </tr>
+  <% end %>
+</table>
