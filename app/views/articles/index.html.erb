@@ -1,11 +1,21 @@
 <h1>Anonymous Quotes:</h1>
+
 <p><%= link_to "Add a Quote", new_article_path %></p>
 
-<table>
-  <% @allarticles.each do |article| %>
-  <tr>
-    <td>"<%= article.quote %>"</td>
-    <td><%= link_to "Comment", article_path(article) %></td>
-  </tr>
-  <% end %>
-</table>
+<% @allarticles.each do |article| %>
+  <table>
+    <tr>
+      <td colspan="2">"<%= article.quote %>"</td>
+      <td><%= link_to "Comment", article_path(article) %></td>
+    </tr>
+    <% article.comments.each do |comment| %>
+      <tr>
+        <td></td>
+        <td>
+          <%= comment.commenter %>:
+          <em><%= comment.body %></em>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
