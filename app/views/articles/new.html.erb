@@ -12,7 +12,7 @@
 </article>
 
 <%= form_for @article do |f| %>
-  <p><%= f.text_area :quote, size: "80x10" %></p>
+  <p><%= f.text_area :quote %></p>
   <p><%= f.submit "Add" %> |
     <%= link_to "Back", root_path%>
   </p>

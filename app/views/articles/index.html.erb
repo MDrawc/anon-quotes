@@ -4,7 +4,8 @@
 <table>
   <% @allarticles.each do |article| %>
   <tr>
-    <td><%= article.quote %></td>
+    <td>"<%= article.quote %>"</td>
+    <td><%= link_to "Comment", article_path(article) %></td>
   </tr>
   <% end %>
 </table>
