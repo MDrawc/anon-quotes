@@ -1,0 +1,10 @@
+<% @article.comments.each do |comment| %>
+<% if comment.errors.any? %>
+  <h3>The following errors prevented the comment from getting created:</h3>
+  <ul>
+  <% comment.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<% end %>
