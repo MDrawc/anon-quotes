@@ -1,0 +1,33 @@
+<br>
+<table>
+  <tr>
+    <th>
+      <% if @article.quote == nil %>
+        ". . . . . . . . . . . ? ? ?. . . . . . . . . . ."
+      <% else %>
+        "<%= @article.quote %>"
+      <% end %>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <ul class="comms">
+        <% if @article.quote == nil %>
+          <li class="comms">. . . no quote, no comments, no fun :|</li>
+        <% elsif  @article.comments.count == 0 %>
+          <li class="comms">. . . no comments :(</li>
+        <% else %>
+          <% @article.comments.each do |comment| %>
+            <% if comment.errors.any? %>
+            <% else %>
+              <li class="comms">
+                <span id="author"><%= comment.commenter %></span>:&nbsp;
+                <%= comment.body %>
+              </li>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+</table>

@@ -7,15 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
-    <% end %>
+    <%= render "layouts/navigation" %>
+    <%= render "layouts/messages" %>
 
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+
   </body>
 </html>

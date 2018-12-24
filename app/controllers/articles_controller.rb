@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Quote was successfully added"
+      flash[:notice] = "Quote was successfully added. :) Look for it below."
       redirect_to root_path
     else
       render 'new'

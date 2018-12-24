@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+@import "bootstrap";
+
+#logo {
+  margin-left: 15px;
+  font-family: 'Roboto', sans-serif;
+  float: left;
+  font-size: 1.9em;
+  color: #F6F6F6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    background-color: #141a1f;
+    box-shadow: 0 0 0 3px #007deb;
+  }
+
+.nav-link {
+    margin-top: 11px;
+    margin-left: 10px;
+  }
+
+.nav-link:hover {
+  color: #24f597 !important;
+}
+
+
+table {
+border-spacing: 9px;
+}
+
+th {
+  background: linear-gradient(130deg, #009efd 0%, #2af598 100%);
+  padding: 10px 25px 10px 20px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  color: #F6F6F6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15em;
+}
+
+td {
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: left;
+}
+
+ul.comms {
+  font-size: 0.9em;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  list-style-type: none;
+  background-color: #e0e7eb;
+  border-radius: 5px;
+  padding: 10px 0px 10px 0px;
+}
+
+li.comms {
+  padding-left: 22px;
+  padding-right: 22px;
+  color: #2d2d2d;
+}
+
+#author {
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+label {
+  margin-top: 15px;
+}
+
+.form-control {
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+  border: none;
+}
+
+.btn:hover {
+  background-color: #007deb;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1em;
+}
+
+.alert {
+  margin: 10px 0px 0px 0px;
+  max-width: 100%;
+}
+
+.smain {
+  margin: 10px 30px 0px 30px;
+}
+
+footer {
+  margin: 45px 20px 10px 20px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.7em;
+  color: #6c757d;
+}

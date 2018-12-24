@@ -1,19 +1,30 @@
-<h2>Add a Quote:</h2>
+<div class="col-sm-8">
 
-<% if @article.errors.any? %>
-  <h3>The following errors prevented the article from getting created:</h3>
-  <ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+  <%= render 'articles/ancomments' %>
+  <%= render 'articles/show_comment_errors' %>
+
+  <% if @article.errors.any? %>
+
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading"><%= pluralize(@article.errors.count, "error") %></h4>
+    prohibited this article from being saved:
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+
   <% end %>
-  </ul>
-<% end %>
 
-</article>
+  <%= form_for @article do |f| %>
+    <div class="form-group">
+      <%= f.label :quote %>
+      <%= f.text_area :quote, class: "form-control", placeholder: "Enter quote", autofocus: true %>
+    </div>
 
-<%= form_for @article do |f| %>
-  <p><%= f.text_area :quote %></p>
-  <p><%= f.submit "Add" %> |
-    <%= link_to "Back", root_path%>
-  </p>
-<% end %>
+    <%= f.submit "Add", class: "btn btn-secondary btn-sm" %>
+    <%= link_to "Back", root_path, class: "btn btn-secondary btn-sm" %>
+
+  <% end %>
+</div>
