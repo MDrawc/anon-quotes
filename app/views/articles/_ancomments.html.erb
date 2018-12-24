@@ -12,7 +12,7 @@
   <tr>
     <td>
       <ul class="comms">
-        <% if @article.quote == nil %>
+        <% if @article.quote == nil or @article.errors.any? == true %>
           <li class="comms">. . . no quote, no comments, no fun :|</li>
         <% elsif  @article.comments.count == 0 %>
           <li class="comms">. . . no comments :(</li>

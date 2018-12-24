@@ -2,7 +2,7 @@
   <% if comment.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h4 class="alert-heading"><%= pluralize(comment.errors.count, "error") %></h4>
-      prohibited this article from being saved:
+      prohibited this comment from being saved:
       <ul>
         <% comment.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>

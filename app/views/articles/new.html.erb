@@ -7,7 +7,7 @@
 
   <div class="alert alert-danger" role="alert">
     <h4 class="alert-heading"><%= pluralize(@article.errors.count, "error") %></h4>
-    prohibited this article from being saved:
+    prohibited this quote from being saved:
     <ul>
       <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
