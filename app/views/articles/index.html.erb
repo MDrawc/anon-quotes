@@ -1,10 +1,32 @@
-<h1>Anonymous Quotes:</h1>
-<p><%= link_to "Add a Quote", new_article_path %></p>
-
-<table>
+<div class="col-sm-12">
+  <br>
   <% @allarticles.each do |article| %>
-  <tr>
-    <td><%= article.quote %></td>
-  </tr>
+    <table>
+      <tr>
+        <th>"<%= article.quote %>"</th>
+      </tr>
+      <tr>
+        <td>
+          <ul class="comms">
+            <% if article.comments.count == 0 %>
+              <li class="comms">. . . no comments :(</li>
+            <% else %>
+              <% article.comments.each do |comment| %>
+                <li class="comms">
+                  <span id="author"><%= comment.commenter %></span>:&nbsp;
+                  <%= comment.body %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to "Comment", article_path(article), class: "btn btn-secondary btn-sm" %>
+        </td>
+      </tr>
+    </table>
+    <br>
   <% end %>
-</table>
+</div>
